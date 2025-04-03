@@ -1,13 +1,13 @@
 package org.java.practice;
 
-public class QueueImpl implements Queue<Object> {
+public class BoundedQueue implements Queue<Object> {
     private final int capacity;
     private int size;
     private int insertIndex;
     private int deqeueIndex;
     private final Object [] q;
 
-    public QueueImpl(int capacity) {
+    public BoundedQueue(int capacity) {
         this.capacity = capacity;
         q = new Object[this.capacity];
     }
@@ -31,29 +31,29 @@ public class QueueImpl implements Queue<Object> {
     }
 
     public static void main(String[] args) {
-        QueueImpl queueImpl = new QueueImpl(2);
-        queueImpl.enque("a");
-        queueImpl.enque("b");
+        BoundedQueue boundedQueue = new BoundedQueue(2);
+        boundedQueue.enque("a");
+        boundedQueue.enque("b");
         try {
-            queueImpl.enque("c");
+            boundedQueue.enque("c");
         } catch (Exception e){
             System.out.println("Unable to insert c");
         }
-        System.out.println(queueImpl.deque());
-        queueImpl.enque("c");
-        System.out.println(queueImpl.deque());
-        System.out.println(queueImpl.deque());
-        queueImpl.enque("e");
-        System.out.println(queueImpl.deque());
+        System.out.println(boundedQueue.deque());
+        boundedQueue.enque("c");
+        System.out.println(boundedQueue.deque());
+        System.out.println(boundedQueue.deque());
+        boundedQueue.enque("e");
+        System.out.println(boundedQueue.deque());
         try {
-            System.out.println(queueImpl.deque());
+            System.out.println(boundedQueue.deque());
         } catch (Exception exception){}
-        queueImpl.enque("f");
-        queueImpl.enque("g");
-        System.out.println(queueImpl.deque());
-        queueImpl.enque("h");
-        System.out.println(queueImpl.deque());
-        System.out.println(queueImpl.deque());
+        boundedQueue.enque("f");
+        boundedQueue.enque("g");
+        System.out.println(boundedQueue.deque());
+        boundedQueue.enque("h");
+        System.out.println(boundedQueue.deque());
+        System.out.println(boundedQueue.deque());
 
     }
 }
