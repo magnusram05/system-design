@@ -1,5 +1,7 @@
 # Bounded queue
 
+[BoundedQueue.java](https://github.com/magnusram05/system-design/edit/main/BoundedQueue.java)
+
 ```java
 
 Queue q = new Queue(2)
