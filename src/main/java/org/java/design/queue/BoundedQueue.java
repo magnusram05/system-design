@@ -1,4 +1,4 @@
-package org.java.practice;
+package org.java.design.queue;
 
 public class BoundedQueue implements Queue<Object> {
     private final int capacity;
